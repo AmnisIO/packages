@@ -1,0 +1,10 @@
+{
+  "name": "@amnisio/rivulet",
+  "version": "1.0.0",
+  "description": "The stream library on which AmnisIO runs",
+  "main": "",
+  "typings": "index.d.ts",
+  "scripts": { },
+  "author": "Sudarsan Balaji <Sudarsan.Balaji@outlook.com>",
+  "license": "MIT"
+}
