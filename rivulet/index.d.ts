@@ -1,9 +1,11 @@
-// Type definitions for rivulet 1.0
+// Type definitions for rivulet 1.1
 // Project: https://github.com/AmnisIO/rivulet
 // Definitions by: Sudarsan Balaji <https://github.com/artfuldev>
 // Definitions: https://github.com/AmnisIO/packages
 
-export type Byte = number;
+export interface Byte extends Number {
+
+}
 
 interface Rivulet<T> {
   map: (mapper: (value: T) => T) => Rivulet<T>;

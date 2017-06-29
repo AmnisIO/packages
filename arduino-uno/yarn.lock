@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-"@amnisio/rivulet@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@amnisio/rivulet/-/rivulet-1.0.0.tgz#498113f80d735789680c8df4d7853b4842e3dfef"
+"@amnisio/rivulet@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@amnisio/rivulet/-/rivulet-1.1.0.tgz#44a44ee3c68bf77a71fb4cde4ba5c0d77dc169cd"
