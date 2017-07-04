@@ -3,7 +3,7 @@
 // Definitions by: Sudarsan Balaji <https://github.com/artfuldev>
 // Definitions: https://github.com/AmnisIO/packages
 
-export interface Byte extends Number {
+export interface Int extends Number {
 
 }
 
@@ -18,10 +18,10 @@ interface Rivulet<T> {
   delay: (delay: number) => Rivulet<T>;
 }
 
-export interface ByteStream extends Rivulet<Byte> {
+export interface IntStream extends Rivulet<Int> {
 
 }
 
-export const periodic: (period: number) => ByteStream;
-export const never: () => ByteStream;
-export const empty: () => ByteStream;
+export const periodic: (period: number) => IntStream;
+export const never: () => IntStream;
+export const empty: () => IntStream;

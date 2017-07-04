@@ -1,43 +1,43 @@
-import { ByteStream, Byte } from '@amnisio/rivulet';
+import { IntStream, Int } from '@amnisio/rivulet';
 
-export const HIGH: Byte;
-export const LOW: Byte;
+export const HIGH: Int;
+export const LOW: Int;
 export const createSinks: () => Sinks;
 
 export interface Sinks {
-  D0$?: ByteStream;
-  D1$?: ByteStream;
-  D2$?: ByteStream;
-  D3$?: ByteStream;
-  D4$?: ByteStream;
-  D5$?: ByteStream;
-  D6$?: ByteStream;
-  D7$?: ByteStream;
-  D8$?: ByteStream;
-  D9$?: ByteStream;
-  D10$?: ByteStream;
-  D11$?: ByteStream;
-  D12$?: ByteStream;
-  D13$?: ByteStream;
-  LED$?: ByteStream;
+  D0$?: IntStream;
+  D1$?: IntStream;
+  D2$?: IntStream;
+  D3$?: IntStream;
+  D4$?: IntStream;
+  D5$?: IntStream;
+  D6$?: IntStream;
+  D7$?: IntStream;
+  D8$?: IntStream;
+  D9$?: IntStream;
+  D10$?: IntStream;
+  D11$?: IntStream;
+  D12$?: IntStream;
+  D13$?: IntStream;
+  LED$?: IntStream;
 }
 
 export interface Sources {
-  D0$: ByteStream;
-  D1$: ByteStream;
-  D2$: ByteStream;
-  D3$: ByteStream;
-  D4$: ByteStream;
-  D5$: ByteStream;
-  D6$: ByteStream;
-  D7$: ByteStream;
-  D8$: ByteStream;
-  D9$: ByteStream;
-  D10$: ByteStream;
-  D11$: ByteStream;
-  D12$: ByteStream;
-  D13$: ByteStream;
-  LED$: ByteStream;
+  D0$: IntStream;
+  D1$: IntStream;
+  D2$: IntStream;
+  D3$: IntStream;
+  D4$: IntStream;
+  D5$: IntStream;
+  D6$: IntStream;
+  D7$: IntStream;
+  D8$: IntStream;
+  D9$: IntStream;
+  D10$: IntStream;
+  D11$: IntStream;
+  D12$: IntStream;
+  D13$: IntStream;
+  LED$: IntStream;
 }
 
 export interface GyrusApplication {
