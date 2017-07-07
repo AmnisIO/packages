@@ -38,6 +38,12 @@ export interface Sources {
   D12$: IntStream;
   D13$: IntStream;
   LED$: IntStream;
+  A0$: IntStream;
+  A1$: IntStream;
+  A2$: IntStream;
+  A3$: IntStream;
+  A4$: IntStream;
+  A5$: IntStream;
 }
 
 export interface GyrusApplication {
