@@ -1,4 +1,4 @@
-// Type definitions for rivulet 1.1
+// Type definitions for rivulet 2.2
 // Project: https://github.com/AmnisIO/rivulet
 // Definitions by: Sudarsan Balaji <https://github.com/artfuldev>
 // Definitions: https://github.com/AmnisIO/packages
@@ -16,7 +16,7 @@ interface Rivulet<T> {
   last: () => Rivulet<T>;
   sample: (input$: Rivulet<T>) => Rivulet<T>;
   delay: (delay: number) => Rivulet<T>;
-  fold: (accumulator: (accumulated: number, current: number) => number) => Rivulet<T>;
+  fold: (accumulator: (accumulated: number, current: number) => number, initial: number) => Rivulet<T>;
 }
 
 export interface IntStream extends Rivulet<Int> {
