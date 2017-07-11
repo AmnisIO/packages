@@ -7,6 +7,6 @@
   "author": "Sudarsan Balaji <Sudarsan.Balaji@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@amnisio/rivulet": "^2.0.1"
+    "@amnisio/rivulet": "2.1.0"
   }
 }
