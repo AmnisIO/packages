@@ -1,12 +1,12 @@
 {
   "name": "@amnisio/arduino-uno",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "The gyrus framework for arduino uno that AmnisIO uses",
   "main": "",
   "scripts": {},
   "author": "Sudarsan Balaji <Sudarsan.Balaji@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@amnisio/rivulet": "^2.0.1"
+    "@amnisio/rivulet": "2.1.0"
   }
 }

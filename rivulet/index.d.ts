@@ -16,6 +16,7 @@ interface Rivulet<T> {
   last: () => Rivulet<T>;
   sample: (input$: Rivulet<T>) => Rivulet<T>;
   delay: (delay: number) => Rivulet<T>;
+  fold: (accumulator: (accumulated: number, current: number) => number) => Rivulet<T>;
 }
 
 export interface IntStream extends Rivulet<Int> {
