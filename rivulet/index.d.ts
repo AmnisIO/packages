@@ -3,26 +3,18 @@
 // Definitions by: Sudarsan Balaji <https://github.com/artfuldev>
 // Definitions: https://github.com/AmnisIO/packages
 
-export interface Int extends Number {
-
+interface RivuletStream {
+  map: (mapper: (value: number) => number) => RivuletStream;
+  mapTo: (value: number) => RivuletStream;
+  filter: (predicate: (value: number) => boolean) => RivuletStream;
+  take: (count: number) => RivuletStream;
+  drop: (count: number) => RivuletStream;
+  last: () => RivuletStream;
+  sample: (input$: RivuletStream) => RivuletStream;
+  delay: (delay: number) => RivuletStream;
+  fold: (accumulator: (accumulated: number, current: number) => number, initial: number) => RivuletStream;
 }
 
-interface Rivulet<T> {
-  map: (mapper: (value: T) => T) => Rivulet<T>;
-  mapTo: (value: T) => Rivulet<T>;
-  filter: (predicate: (value: T) => boolean) => Rivulet<T>;
-  take: (count: number) => Rivulet<T>;
-  drop: (count: number) => Rivulet<T>;
-  last: () => Rivulet<T>;
-  sample: (input$: Rivulet<T>) => Rivulet<T>;
-  delay: (delay: number) => Rivulet<T>;
-  fold: (accumulator: (accumulated: number, current: number) => number, initial: number) => Rivulet<T>;
-}
-
-export interface IntStream extends Rivulet<Int> {
-
-}
-
-export const periodic: (period: number) => IntStream;
-export const never: () => IntStream;
-export const empty: () => IntStream;
+export const periodic: (period: number) => RivuletStream;
+export const never: () => RivuletStream;
+export const empty: () => RivuletStream;
