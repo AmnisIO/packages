@@ -60,6 +60,22 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
   filter: (predicate: (value: number) => boolean) => RivuletStream;
+  /**
+   * Lets the first `count` many events from the input stream pass to the
+   * output stream, then makes the output stream complete.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --a---b--c----d---e--
+   *    take(3)
+   * --a---b--c|
+   * ```
+   *
+   * @param {number} count How many events to allow from the input stream
+   * before completing the output stream.
+   * @return {Stream}
+   */
   take: (count: number) => RivuletStream;
   drop: (count: number) => RivuletStream;
   last: () => RivuletStream;
