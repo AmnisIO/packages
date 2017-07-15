@@ -74,9 +74,26 @@ interface RivuletStream {
    *
    * @param {number} count How many events to allow from the input stream
    * before completing the output stream.
-   * @return {Stream}
+   * @return {RivuletStream}
    */
   take: (count: number) => RivuletStream;
+  /**
+   * Ignores the first `count` many events from the input stream, and then
+   * after that starts forwarding events from the input stream to the output
+   * stream.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --a---b--c----d---e--
+   *       drop(3)
+   * --------------d---e--
+   * ```
+   *
+   * @param {number} count How many events to ignore from the input stream
+   * before forwarding all events from the input stream to the output stream.
+   * @return {RivuletStream}
+   */
   drop: (count: number) => RivuletStream;
   last: () => RivuletStream;
   sample: (input$: RivuletStream) => RivuletStream;
