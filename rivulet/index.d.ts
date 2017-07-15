@@ -4,7 +4,24 @@
 // Definitions: https://github.com/AmnisIO/packages
 
 interface RivuletStream {
-  map: (mapper: (value: number) => number) => RivuletStream;
+  /**
+   * Transforms each event from the input stream through a `project` function,
+   * to get a stream that emits those transformed events.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --1---3--5-----7------
+   *    map(i => i * 10)
+   * --10--30-50----70-----
+   * ```
+   *
+   * @param {Function} project A function of type `(value: number) => number` that takes 
+   * a number from the input stream and produces another number, to
+   * be emitted on the output stream.
+   * @return {RivuletStream}
+   */
+  map: (project: (value: number) => number) => RivuletStream;
   mapTo: (value: number) => RivuletStream;
   filter: (predicate: (value: number) => boolean) => RivuletStream;
   take: (count: number) => RivuletStream;
