@@ -22,6 +22,22 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
   map: (project: (value: number) => number) => RivuletStream;
+  /**
+   * It's like `map`, but transforms each input to always the same
+   * constant value on the output stream.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --1---3--5-----7-----
+   *       mapTo(10)
+   * --10--10-10----10----
+   * ```
+   *
+   * @param value A value to emit on the output stream whenever the
+   * input stream emits any value.
+   * @return {RivuletStream}
+   */
   mapTo: (value: number) => RivuletStream;
   filter: (predicate: (value: number) => boolean) => RivuletStream;
   take: (count: number) => RivuletStream;
