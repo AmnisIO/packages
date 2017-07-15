@@ -1,4 +1,4 @@
-// Type definitions for rivulet 2.2
+// Type definitions for rivulet 3.0
 // Project: https://github.com/AmnisIO/rivulet
 // Definitions by: Sudarsan Balaji <https://github.com/artfuldev>
 // Definitions: https://github.com/AmnisIO/packages
