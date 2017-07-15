@@ -44,4 +44,16 @@ export const periodic: (period: number) => RivuletStream;
    * @return {RivuletStream}
    */
 export const never: () => RivuletStream;
+/**
+   * Creates a stream that immediately emits completes when started, and that's it.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * empty
+   * -|
+   * ```
+   *
+   * @return {RivuletStream}
+   */
 export const empty: () => RivuletStream;
