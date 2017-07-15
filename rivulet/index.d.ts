@@ -31,5 +31,17 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
 export const periodic: (period: number) => RivuletStream;
+/**
+   * Creates a stream that does nothing when started. It never emits any event.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   *          never
+   * -----------------------
+   * ```
+   *
+   * @return {RivuletStream}
+   */
 export const never: () => RivuletStream;
 export const empty: () => RivuletStream;
