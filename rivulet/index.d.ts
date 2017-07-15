@@ -95,6 +95,20 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
   drop: (count: number) => RivuletStream;
+  /**
+   * When the input stream completes, the output stream will emit the last event
+   * emitted by the input stream, and then will also complete.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --a---b--c--d----|
+   *       last()
+   * -----------------d|
+   * ```
+   *
+   * @return {RivuletStream}
+   */
   last: () => RivuletStream;
   sample: (input$: RivuletStream) => RivuletStream;
   delay: (delay: number) => RivuletStream;
