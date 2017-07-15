@@ -39,6 +39,26 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
   mapTo: (value: number) => RivuletStream;
+  /**
+   * Only allows events that pass the test given by the `passes` argument.
+   *
+   * Each event from the input stream is given to the `predicate` function. If the
+   * function returns `true`, the event is forwarded to the output stream,
+   * otherwise it is ignored and not forwarded.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * --1---2--3-----4-----5---6--7-8--
+   *     filter(i => i % 2 === 0)
+   * ------2--------4---------6----8--
+   * ```
+   *
+   * @param {Function} predicate A function of type `(value: number) => boolean` that takes
+   * an event from the input stream and checks if it passes, by returning a
+   * boolean.
+   * @return {RivuletStream}
+   */
   filter: (predicate: (value: number) => boolean) => RivuletStream;
   take: (count: number) => RivuletStream;
   drop: (count: number) => RivuletStream;
