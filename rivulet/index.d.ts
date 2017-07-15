@@ -112,7 +112,35 @@ interface RivuletStream {
   last: () => RivuletStream;
   sample: (input$: RivuletStream) => RivuletStream;
   delay: (delay: number) => RivuletStream;
-  fold: (accumulator: (accumulated: number, current: number) => number, initial: number) => RivuletStream;
+  /**
+   * "Folds" the stream onto itself.
+   *
+   * Combines events from the past throughout the entire execution of the
+   * input stream, allowing you to accumulate them together. It's essentially
+   * like `Array.prototype.reduce`.
+   *
+   * The output stream starts by emitting the `seed` which you give as argument.
+   * Then, when an event happens on the input stream, it is combined with that
+   * seed value through the `accumulate` function, and the output value is
+   * emitted on the output stream. `fold` remembers that output value as `accumulated`,
+   * and then when a new input event `value` happens, `accumulated` will be
+   * combined with that to produce the new `accumulated` and so forth.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   * ------1-----1--2----1----1------
+   *   fold((acc, x) => acc + x, 3)
+   * 3-----4-----5--7----8----9------
+   * ```
+   *
+   * @param {Function} accumulate A function of type `(accumulated: number, value: number) => number` that
+   * takes the previous accumulated value `accumulated` and the incoming event from the
+   * input stream and produces the new accumulated value.
+   * @param seed The initial accumulated value, of type `number`.
+   * @return {RivuletStream}
+   */
+  fold: (accumulate: (accumulated: number, value: number) => number, seed: number) => RivuletStream;
 }
 
 /**
