@@ -110,6 +110,23 @@ interface RivuletStream {
    * @return {RivuletStream}
    */
   last: () => RivuletStream;
+  /**
+   * Samples an input stream and emits the latest event from the input stream
+   * whenever this stream emits an event.
+   * 
+   * Marble diagram:
+   * 
+   * ```text
+   * ----------0----0-|
+   *       sample(
+   * --a---b--c--d----|
+   *       )
+   * ----------c----d-|
+   * ```
+   * 
+   * @param {RivuletStream} input$ The input stream to sample
+   * @return {RivuletStream}
+   */
   sample: (input$: RivuletStream) => RivuletStream;
   /**
  * Delays periodic events by a given time period.
