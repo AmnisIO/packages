@@ -15,6 +15,21 @@ interface RivuletStream {
   fold: (accumulator: (accumulated: number, current: number) => number, initial: number) => RivuletStream;
 }
 
+/**
+   * Creates a stream that periodically emits `0`, every
+   * `period` milliseconds.
+   *
+   * Marble diagram:
+   *
+   * ```text
+   *     periodic(1000)
+   * ---0---0---0---0---0---...
+   * ```
+   *
+   * @param {number} period The interval in milliseconds to use as a rate of
+   * emission.
+   * @return {RivuletStream}
+   */
 export const periodic: (period: number) => RivuletStream;
 export const never: () => RivuletStream;
 export const empty: () => RivuletStream;
