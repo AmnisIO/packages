@@ -111,7 +111,21 @@ interface RivuletStream {
    */
   last: () => RivuletStream;
   sample: (input$: RivuletStream) => RivuletStream;
-  delay: (delay: number) => RivuletStream;
+  /**
+ * Delays periodic events by a given time period.
+ *
+ * Marble diagram:
+ *
+ * ```text
+ * 1----2--3--4----5|
+ *     delay(60)
+ * ---1----2--3--4----5|
+ * ```
+ *
+ * @param {number} period The amount of silence required in milliseconds.
+ * @return {RivuletStream}
+ */
+  delay: (period: number) => RivuletStream;
   /**
    * "Folds" the stream onto itself.
    *
